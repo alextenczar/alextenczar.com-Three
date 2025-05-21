@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
 
 export default async function PhotoPage({ params }) {
     const { id } = await params;
-    const res = await fetch(`https://${process.env.VERCEL_URL}/api/photo?id=${id}`, { cache: 'no-store' });
+    const res = await fetch(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/photo?id=${id}`, { cache: 'no-store' });
 
     const shimmer = (w, h) => `
     <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

@@ -33,7 +33,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       images: [
         {
-          url: `https://${process.env.VERCEL_URL}/opengraph-image.png`,
+          url: `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/opengraph-image.png`,
           width: 1200,
           height: 630,
         },
