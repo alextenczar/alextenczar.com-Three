@@ -1,9 +1,9 @@
 'use client'
 
+import useSWR from 'swr'
 import { Link } from '@/i18n/navigation'
 import Image from "next/image"
 import "../photo.scss"
-import { useEffect } from "react"
 
 
 const shimmer = (w, h) => `
@@ -25,51 +25,63 @@ const toBase64 = (str) =>
         ? Buffer.from(str).toString('base64')
         : window.btoa(str)
 
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
 
 
-export default function ImageGrid({ images }) {
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
+export default function ImageGrid() {
+    const fetcher = (...args) => fetch(...args).then((res) => res.json())
+    let { data, error } = useSWR(`/api/photos?quantity=100`, fetcher)
+    if (error) return
+    if (!data) return <span className="loading"></span>
 
-        document.querySelectorAll('.image-inner').forEach((element) => {
-            element.addEventListener('click', () => handleClick(element));
+    data = data.response;
+
+    let images = shuffleArray(data.photos.photo);
+
+
+    let imagesComp = images.map((photo, index) => {
+        let serverId = photo.server
+        let id = photo.id
+        let secret = photo.secret
+        let sizeSuffix = "b"
+        let priority = false
+        if (index < 30) {
+            priority = true;
         }
+        let url = `https://live.staticflickr.com/${serverId}/${id}_${secret}_${sizeSuffix}.jpg`
+        return (
+            <div className={`image-inner`} key={index}>
+                <div className={`image-inner-container`}>
+                    <Link href={`photo/${id}`} target="_blank">
+                        <Image
+                            tabIndex={0}
+                            src={url}
+                            width={400}
+                            height={200}
+                            alt='test'
+                            unoptimized={true}
+                            key={index}
+                            priority={true}
+                            placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(400, 200))}`}
+                        />
+                    </Link>
+                </div>
+            </div>
         );
-    }, []);
+    })
 
     return (
         <div className='image-container'>
-            {images.map((photo, index) => {
-                let serverId = photo.server
-                let id = photo.id
-                let secret = photo.secret
-                let sizeSuffix = "b"
-                let priority = false
-                if (index < 30) {
-                    priority = true;
-                }
-                let url = `https://live.staticflickr.com/${serverId}/${id}_${secret}_${sizeSuffix}.jpg`
-                return (
-                    <div className={`image-inner`} key={index}>
-                        <div className={`image-inner-container`}>
-                            <Link href={`photo/${id}`} target="_blank">
-                                <Image
-                                    tabIndex={0}
-                                    src={url}
-                                    width={400}
-                                    height={200}
-                                    alt='test'
-                                    unoptimized={true}
-                                    key={index}
-                                    priority={true}
-                                    placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(400, 200))}`}
-                                />
-                            </Link>
-                        </div>
-                    </div>
-                );
-            })}
+            {imagesComp}
         </div >
     )
 }

@@ -1,24 +1,10 @@
-'use client'
-
-import Head from 'next/head'
 import ImageGrid from '../components/ImageGrid';
 import { getTranslations } from "next-intl/server";
 
-function shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-
-  return array
-}
-
-export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }) {
-  const { locale } = await params;
+  const { locale } = params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
   return {
@@ -27,31 +13,13 @@ export async function generateMetadata({ params }) {
   };
 }
 
-
-
-export default async function Photo(ref) {
-  async function fetchPhotos() {
-    const res = await fetch(`https://${process.env.VERCEL_URL}/api/photos?quantity=100`, { cache: 'no-store' });
-    let response = await res.json();
-    return response.response;
-  }
-
-  const response = await fetchPhotos();
-
-  let images = shuffleArray(response.photos.photo);
+export default async function Photo() {
 
   return (
-    <>
-      <Head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `history.scrollRestoration = "manual"`,
-          }}
-        />
-      </Head>
-      <main>
-        <ImageGrid images={images} />
-      </main>
-    </>
-  )
+    <main>
+      <div className='min-h-[100vh]'>
+        <ImageGrid />
+      </div>
+    </main>
+  );
 }

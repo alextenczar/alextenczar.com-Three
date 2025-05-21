@@ -26,11 +26,9 @@ export const ScrollTools = () => {
         const scrollToTopButton = document.createElement('button');
         scrollToTopButton.className = 'scroll-to-top-button';
 
-        let hamburger = document.querySelector('.nav-hamburger')
-
         document.body.appendChild(scrollToTopButton);
 
-        scrollToTopButton.innerHTML = '<span className="material-symbols-outlined scroll-to-top">arrow_upward</span>';
+        scrollToTopButton.innerHTML = '<span class="material-symbols-outlined scroll-to-top">arrow_upward</span>';
 
         scrollToTopButton.addEventListener('click', () => {
             lenis.scrollTo(0, { duration: 1.5 });

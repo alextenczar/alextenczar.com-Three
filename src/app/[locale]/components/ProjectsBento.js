@@ -1,6 +1,5 @@
 'use client';
 
-import { useRef } from 'react';
 import '../projectsbento.scss';
 import { useEffect } from 'react';
 
