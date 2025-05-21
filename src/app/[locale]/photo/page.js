@@ -1,3 +1,5 @@
+'use client'
+
 import Head from 'next/head'
 import ImageGrid from '../components/ImageGrid';
 import { getTranslations } from "next-intl/server";
@@ -25,14 +27,14 @@ export async function generateMetadata({ params }) {
   };
 }
 
-async function fetchPhotos() {
-  const res = await fetch(`https://${process.env.VERCEL_URL}/api/photos?quantity=100`, { cache: 'no-store' });
-  let response = await res.json();
-  return response.response;
-}
 
 
 export default async function Photo(ref) {
+  async function fetchPhotos() {
+    const res = await fetch(`https://${process.env.VERCEL_URL}/api/photos?quantity=100`, { cache: 'no-store' });
+    let response = await res.json();
+    return response.response;
+  }
 
   const response = await fetchPhotos();
 
