@@ -16,7 +16,7 @@ export default function PhotoInfoMap({ lat, lon }) {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             setMapVar(
-                <div className='map-container md:h-128 h-96 md:w-128 w-96'>
+                <div className='map-container md:h-128 h-96 md:w-128 max-w-96 w-full aspect-square z-0'>
                     <Map lat={lat} lon={lon} />
                 </div>
             );

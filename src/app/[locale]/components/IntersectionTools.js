@@ -16,7 +16,7 @@ export const IntersectionTools = () => {
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.125
+                threshold: 0.05
             };
 
             function observerCallback(entries) {

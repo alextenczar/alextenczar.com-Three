@@ -46,7 +46,7 @@ export default function Home({ params }) {
         <div className='bento observe-scroll md:col-span-2'>
           <h2 className='text-4xl font-bold'>{t('education.title')}</h2>
           <h3 className='text-lg text-neutral-500'>{t('education.subtitle')}</h3>
-          <div className="grid grid-cols-20 grid-rows-5 text-xs mt-6 education-timeline max-md:min-h-80">
+          <div className="grid grid-cols-20 md:grid-rows-5 grid-rows-[auto] text-xs mt-6 education-timeline max-md:min-h-80">
             <div className="py-2 col-span-20 grid grid-cols-subgrid"><div className="timeline-label px-2 col-start-11 col-span-9 rounded-full font-bold self-end">{t('education.launchtheory')}</div><Link href="https://launchtheory.com" target="_blank" className="timeline-item h-3 col-start-11 col-span-9 bg-purple-500 rounded-full">&nbsp;</Link></div>
             <div className="col-span-20 grid grid-cols-subgrid grid-rows-2"><div className="timeline-label px-2 col-start-9 col-span-11 rounded-full font-bold self-end">{t('education.internship')}</div><Link href="https://commonplaces.com" target="_blank" className="timeline-item h-3 col-start-9 col-span-2 bg-green-500 rounded-full">&nbsp;</Link></div>
             <div className="col-span-20 grid grid-cols-subgrid"><div className="timeline-label px-2 col-start-8 col-span-13 rounded-full font-bold self-end">{t('education.grad')}</div><Link href="https://unh.edu" target='_blank' className="timeline-item  h-3 col-start-8 col-span-4 bg-orange-500 rounded-full">&nbsp;</Link></div>

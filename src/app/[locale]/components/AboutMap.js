@@ -14,7 +14,7 @@ export default function AboutMap({ lat, lon }) {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             setMapVar(
-                <div className='map-container md:row-span-2 max-sm:row-span md:h-96 min-h-96 bento observe-scroll'>
+                <div className='map-container md:row-span-2 max-sm:row-span md:h-96 min-h-96 bento observe-scroll z-0'>
                     <Map lat={lat} lon={lon} />
                 </div>
             );

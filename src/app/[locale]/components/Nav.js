@@ -83,7 +83,7 @@ const Nav = (props) => {
                     </ul>
 
 
-                    <div className=' mt-auto mb-4 flex flex-col gap-6'>
+                    <div className=' mt-auto mb-4 flex flex-col sm:gap-6 gap-4'>
                         <div className='mb-4'>
                             <p className='text-right lg:text-2xl text-xl mb-2'>
                                 {props.settingsTitle}
