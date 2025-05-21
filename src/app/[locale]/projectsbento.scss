@@ -1,0 +1,21 @@
+.bento-projects {
+    position: relative;
+
+    &:hover {
+        video {
+            bottom: -10;
+        }
+    }
+
+    video {
+        width: 66%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        border: 5px solid #333;
+        position: relative;
+        bottom: -60px;
+        transition: bottom 1s;
+
+    }
+}

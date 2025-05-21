@@ -1,0 +1,79 @@
+{    
+    "Manifest": {
+        "name": "Alex Tenczar",
+        "description": "Full Stack Engineer"
+    },
+    "Metadata": {
+        "title": "Alex Tenczar",
+        "description": "Full Stack Engineer",
+        "themeColor": "#ffffff",
+        "keywords": "Alex, Alexander, Tenczar, Alex Tenczar, Alexander Tenczar, Next.js, React, JavaScript, Engineer, Developer, Full Stack, Full Stack Engineer, Full Stack Developer",
+        "blog": {
+            "title": "Alex Tenczar | Blog",
+            "description": "A Full Stack Engineer's Blog"
+        },
+        "works": {
+            "title": "Alex Tenczar | Works",
+            "description": "Full Stack Engineer Portfolio"
+        },
+        "photo": {
+            "title": "Alex Tenczar | Photo",
+            "description": "Various Film and Digital Works"
+        },
+        "contact": {
+            "title": "Alex Tenczar | Contact",
+            "description": "Feel Free to Reach Out"   
+        }
+    },
+    "Nav": {
+        "settings": "Page Settings",
+        "socials": "Socials",
+        "language": "Language",
+        "temperature": "Temperature Unit",
+        "time": "Time Format"
+    },
+    "HomePage": {
+        "intro": {
+            "name": "Alex Tenczar",
+            "para": "Hi, I'm Alex – an experienced full stack engineer with a master's degree in information technology from the University of New Hampshire. I currently live in Japan and work as a contract developer for respected universities in the United States. In my free time I build web applications around modern SEO, accessibility, and security practices. When I'm not working or building something, I enjoy snowboarding, running, and taking photos."
+        },
+        "location": {
+            "residing": "Residing In",
+            "residingLocation": "Kanazawa, Japan",
+            "origin": "Originally From",
+            "originLocation": "Concord, NH, USA"
+        },
+        "works": {
+            "title": "Works",
+            "subtitle": "Footprints of My Career"
+        },
+        "education": {
+            "title": "Education and Career",
+            "subtitle": "What I've Done (So Far)",
+            "undergrad": "Undergraduate Studies in IT (BSc CIS) @ UNH",
+            "grad": "Graduate School Studies in IT (MSc IT) @ UNH",
+            "internship": "Frontend Engineering Intern @ CommonPlaces",
+            "launchtheory": "Full Stack Engineer @ Launch Theory"
+        },
+        "skills": {
+            "title": "Technical Skills",
+            "subtitle": "Tools & Technologies I've Found Myself Using"
+        },
+        "blog": {
+            "title": "Blog",
+            "subtitle": "A Collection of My Thoughts"
+        },
+        "photography": {
+            "title": "Photography",
+            "subtitle": "Assorted Film and Digital Works"
+        },
+        "sports": {
+            "title": "Sports",
+            "subtitle": "Some Things I Do To Blog Off Steam"
+        },
+        "contact": {
+            "title": "Connect With Me",
+            "subtitle": "Feel Free To Reach Out, I'd Love To Hear From You"
+        }
+    }
+}

@@ -1,3 +1,7 @@
+const createNextIntlPlugin = require('next-intl/plugin');
+
+const withNextIntl = createNextIntlPlugin();
+
 const securityHeaders = [{
     key: 'X-Frame-Options',
     value: 'SAMEORIGIN'
@@ -18,6 +22,7 @@ const securityHeaders = [{
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    reactStrictMode: false,
     async headers() {
         return [
             {
@@ -26,6 +31,16 @@ const nextConfig = {
             }
         ]
     },
+    images: {
+        unoptimized: true,
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: '*',
+            }
+        ],
+    },
 }
 
-module.exports = nextConfig
+module.exports = withNextIntl(nextConfig)
+

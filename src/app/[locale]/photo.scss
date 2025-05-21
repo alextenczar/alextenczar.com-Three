@@ -1,0 +1,106 @@
+.image-container {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 5rem;
+    animation: slide-up-load 1s;
+
+
+    div {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        transition: transform 500ms, filter 250ms;
+
+        &.image-expand button {
+            display: block;
+        }
+
+        button {
+            display: none;
+            position: absolute;
+            top: 105%;
+            left: 105%;
+            font-size: 2.5rem;
+        }
+
+        .image-inner-container:hover,
+        .image-inner-container:focus {
+            z-index: 4 !important;
+            transform: scale(130%) rotate(0deg) translateX(0%) translateZ(0) !important;
+        }
+    }
+}
+
+.image-container div img {
+    display: block;
+    max-width: 200px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 7px 6px 26px -3px rgba(0, 0, 0, 0.55);
+    position: relative;
+    transition: width 500ms, height 500ms;
+    cursor: pointer;
+
+
+
+}
+
+.image-container {
+    & div:not(:first-child) .image-inner-container {
+        margin-top: -50px;
+    }
+
+    & div:nth-child(4n + 1) .image-inner-container {
+        transform: rotate(-4deg) translateX(-33%)
+    }
+
+    & div:nth-child(4n + 2) .image-inner-container {
+        z-index: 1;
+        transform: rotate(3deg) translateX(15%)
+    }
+
+    & div:nth-child(4n + 3) .image-inner-container {
+        transform: rotate(-6deg) translateX(-33%)
+    }
+
+    & div:nth-child(4n + 4) .image-inner-container {
+        z-index: 1;
+        transform: rotate(2deg) translateX(15%)
+    }
+}
+
+.image-container .image-expand img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg) translateX(0%) translateZ(0);
+    z-index: 4;
+    height: auto;
+    object-fit: contain;
+    ;
+    max-width: min(66vw, 768px);
+    max-height: min(66vh, 1028px);
+}
+
+.image-container .image-expand .image-inner-container {
+    transform: none !important;
+
+    &:hover,
+    &:focus {
+        transform: none !important;
+    }
+}
+
+
+@keyframes slide-up-load {
+    0% {
+        transform: translateY(10%);
+    }
+
+    75% {
+        transform: translateY(-.75em);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}

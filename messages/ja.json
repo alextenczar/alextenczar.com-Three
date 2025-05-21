@@ -1,0 +1,79 @@
+{
+    "Manifest": {
+        "name": "Alex Tenczar - テンザーアレックス",
+        "description": "フルスタックエンジニア"
+    },
+    "Metadata": {
+        "title": "Alex Tenczar - テンザーアレックス",
+        "description": "フルスタックエンジニア",
+        "themeColor": "#ffffff",
+        "keywords": "Alex, Alexander, Tenczar, Alex Tenczar, Alexander Tenczar, アレックス, アレクサンダー, テンザー, テンザーアレックス, テンザーアレクサンダー, アレックステンザー, アレクサンダーテンザー, Next.js, React, JavaScript, Engineer, Developer, Full Stack, Full Stack Engineer, Full Stack Developer, フルスタックエンジニア, フルスタックディベロッパー, デベロッパー, フルスタック",
+        "blog": {
+            "title": "Alex Tenczar - テンザーアレックス | Blog",
+            "description": "フルスタックエンジニアの思考の集積"
+        },
+        "works": {
+            "title": "Alex Tenczar - テンザーアレックス | Works",
+            "description": "フルスタックエンジニアの実績紹介"
+        },
+        "photo": {
+            "title": "Alex Tenczar - テンザーアレックス | Photo",
+            "description": "色んなフィルムとデジタル作品"
+        },
+        "contact": {
+            "title": "Alex Tenczar - テンザーアレックス | Contact",
+            "description": "お問い合わせ"   
+        }
+    },
+    "Nav": {
+        "settings": "ページ設定",
+        "socials": "SNS",
+        "language": "言語",
+        "temperature": "温度単位",
+        "time": "時間表示"
+    },
+    "HomePage": {
+        "intro": {
+            "name": "Alex Tenczar",
+            "para": "こんにちは、アレックスです。ニューハンプシャー大学にて情報システムズの修士号を取得し、フルスタックエンジニアとして活動しています。今は日本に住んでおり、アメリカの著名な大学と契約のもと、業務に従事しております。空いた時間には、最新のSEO、アクセシビリティ、セキュリティに優れたWebアプリの開発を行っています。開発以外では、スノボードやランニング、写真撮影の趣味を楽しんでいます。"
+        },
+        "location": {
+            "residing": "在住",
+            "residingLocation": "石川県金沢市",
+            "origin": "出身",
+            "originLocation": "コンコード市, ニューハンプシャー州, アメリカ"
+        },
+        "works": {
+            "title": "実績紹介",
+            "subtitle": "経歴の軌跡"
+        },
+        "education": {
+            "title": "教育と経歴",
+            "subtitle": "これまで取り組んできたこと",
+            "undergrad": "情報システムズ(IT)学士の勉強 ＠ ニューハンプシャー大学",
+            "grad": "情報システムズ(IT)修士の勉強 ＠ ニューハンプシャー大学",
+            "internship": "フロントエンドエンジニアインターン ＠ CommonPlaces",
+            "launchtheory": "フルスタックエンジニア ＠ Launch Theory"
+        },
+        "skills": {
+            "title": "技能",
+            "subtitle": "使えるツールとテクノロジー"
+        },
+        "blog": {
+            "title": "ブログ",
+            "subtitle": "思考の集積"
+        },
+        "photography": {
+            "title": "写真",
+            "subtitle": "色んなフィルムとデジタル作品"
+        },
+        "sports": {
+            "title": "スポーツ",
+            "subtitle": "気分転換のためにする息抜き"
+        },
+        "contact": {
+            "title": "お問い合わせ",
+            "subtitle": "あなたからのメッセージを待っています"
+        }
+    }
+}

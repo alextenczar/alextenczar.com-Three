@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Alex Tenczar",
+    "short_name": "Alex Tenczar",
+    "description": "Full Stack Engineer",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +14,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#000000",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "browser"
 }
