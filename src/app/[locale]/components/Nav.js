@@ -54,7 +54,7 @@ const Nav = (props) => {
                     <p className='absolute top-4 left-[50%] transform-[translateX(-50%)] z-11 lg:text-5xl text-3xl w-full px-10 py-3 max-w-[1280px] m-auto font-extrabold'>
                         <Link href='/' >Alex Tenczar</Link>
                     </p>
-                    <ul className="lg:text-8xl text-7xl text-right mt-24">
+                    <ul className="lg:text-8xl sm:text-7xl text-5xl text-right mt-24">
                         <li>
                             <Link href="/" className="no-underline !font-extrabold">
                                 About
