@@ -32,8 +32,8 @@ export default function SportsBento(props) {
 
             <div className='video-mask'></div>
             {selectedSport === 'snowboarding' && (
-                <video autoPlay muted loop playsInline className="snowboard-video">
-                    <source src="/snowboard2.mp4" type="video/mp4" />
+                <video autoPlay muted loop playsInline className="snowboard-video" poster='/snowboard-poster'>
+                    <source src="/snowboard.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             )}
