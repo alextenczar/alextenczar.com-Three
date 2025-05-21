@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Photo(ref) {
-  const res = await fetch(`https://${process.env.VERCEL_URL}/api/photos?quantity=100`, { cache: 'no-store' })
+  const res = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/photos?quantity=100`, { cache: 'no-store' })
   let response = await res.json();
   response = response.response
 
