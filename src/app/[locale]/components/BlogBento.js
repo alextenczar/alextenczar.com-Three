@@ -10,25 +10,36 @@ export default function BlogBento(props) {
         var emoji = ['', '🗒️', '💭', '✍️', '✨', '🫠', '🤔', '😵‍💫', '👨‍💻', '😃', '🧐', '💻', '📷', '📸', '🖥️', '⌨️', '💾', '📱', '💿', '📀', '💡', '📝', '📓', '📁', '📔', '🗑️', '✏️', '🖊️', '🤨', '😮‍💨', '😶'];
         var circles = [];
 
-        for (var i = 0; i < 5; i++) {
-            addCircle(i * 150, [10 + 0, 300], emoji[Math.floor(Math.random() * emoji.length)]);
-            addCircle(i * 150, [10 + 0, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-            addCircle(i * 150, [10 - 200, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-            addCircle(i * 150, [10 + 200, 300], emoji[Math.floor(Math.random() * emoji.length)]);
-            addCircle(i * 150, [10 - 400, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-            addCircle(i * 150, [10 + 400, 300], emoji[Math.floor(Math.random() * emoji.length)]);
-            addCircle(i * 150, [10 - 600, -300], emoji[Math.floor(Math.random() * emoji.length)]);
-            addCircle(i * 150, [10 + 600, 300], emoji[Math.floor(Math.random() * emoji.length)]);
+        // Tighter horizontal and vertical ranges
+        const horizontalSpread = 80; // was 300/400/600, now 80
+
+        // Generate horizontalOffsets dynamically using horizontalSpread
+        const horizontalOffsets = [];
+        for (let i = -3; i <= 3; i++) {
+            horizontalOffsets.push(i * horizontalSpread);
         }
+        const verticalSpread = 300; // was 300, now 120
 
-
+        for (var i = 0; i < 2; i++) {
+            horizontalOffsets.forEach(offset => {
+                // alternate vertical direction for variety
+                const ySpread = (offset % 2 === 0) ? verticalSpread : -verticalSpread;
+                addCircle(i * 150, [10 + offset, ySpread], emoji[Math.floor(Math.random() * emoji.length)]);
+            });
+        }
 
         function addCircle(delay, range, color) {
             setTimeout(function () {
-                var c = new Circle(range[0] + Math.random() * range[1], 80 + Math.random() * 4, color, {
-                    x: -0.15 + Math.random() * 0.3,
-                    y: 1 + Math.random() * 1
-                }, range);
+                var c = new Circle(
+                    range[0] + Math.random() * range[1],
+                    80 + Math.random() * 4,
+                    color,
+                    {
+                        x: -0.15 + Math.random() * 0.3,
+                        y: 1 + Math.random() * 1
+                    },
+                    range
+                );
                 circles.push(c);
             }, delay);
         }
@@ -41,7 +52,6 @@ export default function BlogBento(props) {
             this.v = v;
             this.range = range;
             this.element = document.createElement('span');
-            /*this.element.style.display = 'block';*/
             this.element.style.opacity = 0;
             this.element.style.position = 'absolute';
             this.element.style.fontSize = '26px';
@@ -50,7 +60,7 @@ export default function BlogBento(props) {
             container.appendChild(this.element);
 
             this.update = function () {
-                if (_this.y > 800) {
+                if (_this.y > 300) { // was 800, now 300 for tighter vertical bounds
                     _this.y = 80 + Math.random() * 4;
                     _this.x = _this.range[0] + Math.random() * _this.range[1];
                 }
