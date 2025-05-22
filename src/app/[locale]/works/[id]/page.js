@@ -104,7 +104,7 @@ export default async function Post({ params }) {
                             {siteLink && (
                                 <div className="flex flex-col mx-auto gap-2 align-middle justify-center text-center">
                                     <h4 className="text-lg md:text-3xl sm:text-xl font-bold">Check It Out</h4>
-                                    <Link href={siteLink} className="bg-neutral-800 !text-white rounded-4xl py-4 px-8 text-lg sm:text-xl font-bold inline-block mx-auto hover:scale-105" target="_blank">{siteLink}</Link>
+                                    <Link aria-label="Site Link" href={siteLink} className="bg-neutral-800 !text-white rounded-4xl py-4 px-8 text-lg sm:text-xl font-bold inline-block mx-auto hover:scale-105" target="_blank">{siteLink}</Link>
                                 </div>
                             )}
                         </div>

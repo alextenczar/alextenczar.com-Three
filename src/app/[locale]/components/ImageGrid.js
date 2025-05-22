@@ -53,7 +53,7 @@ export default function ImageGrid({ images }) {
                 return (
                     <div className={`image-inner`} key={index}>
                         <div className={`image-inner-container`}>
-                            <Link href={`photo/${id}`} target="_blank">
+                            <Link aria-label={`Photo ${id}`} href={`photo/${id}`} target="_blank">
                                 <Image
                                     tabIndex={0}
                                     src={url}

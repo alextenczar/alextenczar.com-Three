@@ -22,8 +22,6 @@
 
 * {
   box-sizing: border-box;
-  // padding: 0;
-  // margin: 0;
 }
 
 main {
@@ -39,7 +37,6 @@ body {
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
-  /* text-transform: uppercase; */
   line-height: 1.5;
   color: #1d1d1f;
   touch-action: pan-y;

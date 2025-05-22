@@ -56,10 +56,10 @@ export default function LocalBento(props) {
             <div className='bento observe-scroll !bg-linear-to-t !from-fuchsia-200 !to-rose-100 row-span-1 max-md:min-h-64'>
                 <h2 className='text-4xl font-bold'>{headerString}</h2>
                 <div className='bento-button-container'>
-                    <button onClick={() => {
+                    <button aria-label={props.origin} onClick={() => {
                         setLoc('origin')
                     }} className='bento-button material-symbols-outlined text-white bg-black p-1'>child_care</button>
-                    <button onClick={() => {
+                    <button aria-label={props.residing} onClick={() => {
                         setLoc('residing')
                     }} className='bento-button material-symbols-outlined text-white bg-black p-1'>mood</button>
                 </div>

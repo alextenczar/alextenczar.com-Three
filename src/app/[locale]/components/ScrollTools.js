@@ -24,6 +24,7 @@ export const ScrollTools = () => {
         requestAnimationFrame(raf);
 
         const scrollToTopButton = document.createElement('button');
+        scrollToTopButton.setAttribute('aria-label', 'Top');
         scrollToTopButton.className = 'scroll-to-top-button';
 
         document.body.appendChild(scrollToTopButton);

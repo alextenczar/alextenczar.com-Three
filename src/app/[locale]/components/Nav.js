@@ -55,31 +55,31 @@ const Nav = (props) => {
                     style={{ visibility: 'hidden', opacity: 0 }}
                 >
                     <p className='absolute top-4 left-[50%] transform-[translateX(-50%)] z-11 lg:text-5xl text-3xl w-full px-10 py-3 max-w-[1280px] m-auto font-extrabold'>
-                        <Link href='/' >Alex Tenczar</Link>
+                        <Link aria-label="Home" href='/' >Alex Tenczar</Link>
                     </p>
                     <ul className="lg:text-8xl sm:text-7xl text-4xl text-right mt-24">
                         <li>
-                            <Link href="/" className="no-underline !font-extrabold">
+                            <Link aria-label="About" href="/" className="no-underline !font-extrabold">
                                 About
                             </Link>
                         </li>
                         <li>
-                            <Link href="/works" className="no-underline !font-extrabold">
+                            <Link aria-label="Works" href="/works" className="no-underline !font-extrabold">
                                 Works
                             </Link>
                         </li>
                         <li>
-                            <Link href="/blog" className="no-underline !font-extrabold">
+                            <Link aria-label="Blog" href="/blog" className="no-underline !font-extrabold">
                                 Blog
                             </Link>
                         </li>
                         <li>
-                            <Link href="/photo" className="no-underline !font-extrabold">
+                            <Link aria-label="Photo" href="/photo" className="no-underline !font-extrabold">
                                 Photo
                             </Link>
                         </li>
                         <li>
-                            <Link href="/contact" className="no-underline !font-extrabold">
+                            <Link aria-label="Contract" href="/contact" className="no-underline !font-extrabold">
                                 Contact
                             </Link>
                         </li>
@@ -93,10 +93,10 @@ const Nav = (props) => {
                             <div className='text-right lg:text-2xl text-xl'>
                                 <span className="text-base text-neutral-500">{props.languageLabel}</span>
                                 <div className='!lg:text-4xl !text-2xl'>
-                                    <button locale={'en'} className='font-bold' onClick={() => {
+                                    <button aria-label="English" className='font-bold' onClick={() => {
                                         router.replace(pathname, { locale: 'en' });
                                     }}>English</button>&nbsp;
-                                    <button locale={'en'} className='font-bold mb-2' onClick={() => {
+                                    <button aria-label="日本語" className='font-bold mb-2' onClick={() => {
                                         router.replace(pathname, { locale: 'ja' });
                                     }}>日本語</button>
                                     <Suspense><Options setMenuState={menuStateHandler} languageLabel={props.languageLabel} tempLabel={props.tempLabel} timeLabel={props.timeLabel} /></Suspense>
@@ -109,20 +109,20 @@ const Nav = (props) => {
                                 {props.socialsTitle}
                             </p>
                             <ul className='lg:text-4xl text-2xl flex flex-row gap-4 !font-extrabold'>
-                                <li><Link href="https://github.com/alextenczar" target="_blank" rel="noopener noreferrer">GitHub</Link></li>
-                                <li><Link href="https://www.linkedin.com/in/alexander-tenczar/" target="_blank" rel="noopener noreferrer">LinkedIn</Link></li>
-                                <li><Link href="https://www.wantedly.com/id/alexander_tenczar" target="_blank" rel="noopener noreferrer">Wantedly</Link></li>
+                                <li><Link aria-label="Github" href="https://github.com/alextenczar" target="_blank" rel="noopener noreferrer">GitHub</Link></li>
+                                <li><Link aria-label="LinkedIn" href="https://www.linkedin.com/in/alexander-tenczar/" target="_blank" rel="noopener noreferrer">LinkedIn</Link></li>
+                                <li><Link aria-label="Wantedly" href="https://www.wantedly.com/id/alexander_tenczar" target="_blank" rel="noopener noreferrer">Wantedly</Link></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 {(nextPathname !== '/ja' && nextPathname !== '/en') && (
                     <div className="flex items-center justify-between">
-                        <Link href="/" className="text-xl font-bold">Alex Tenczar</Link>
+                        <Link aria-label="Home" href="/" className="text-xl font-bold">Alex Tenczar</Link>
                     </div>
                 )}
             </nav>
-            <button
+            <button aria-label="Menu"
                 className="text-2xl nav-hamburger"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
             >

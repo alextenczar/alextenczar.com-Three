@@ -105,10 +105,10 @@ export default async function PhotoPage({ params }) {
             <div>
                 <div className="indv-photo-container">
                     <div className="indv-photo-inner-container">
-                        {data.prev && <Link href={`/photo/${data.prev}`}><span className="material-symbols-outlined text-neutral-500">
+                        {data.prev && <Link aria-label="Prev Photo" href={`/photo/${data.prev}`}><span className="material-symbols-outlined text-neutral-500">
                             arrow_back_ios
                         </span></Link>}
-                        {data.next && <Link href={`/photo/${data.next}`}><span className="material-symbols-outlined text-neutral-500">
+                        {data.next && <Link aria-label="Next Photo" href={`/photo/${data.next}`}><span className="material-symbols-outlined text-neutral-500">
                             arrow_forward_ios
                         </span></Link>}
                         <Image

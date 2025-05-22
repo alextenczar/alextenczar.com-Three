@@ -43,7 +43,7 @@ export default function Contact() {
                     <textarea id="form-message" required name="message" rows={5} className="text-black w-full" />
 
                 </div>
-                <button className="" type="submit">Send</button>
+                <button aria-label="Submit" className="" type="submit">Send</button>
             </form>
         </main>
     )

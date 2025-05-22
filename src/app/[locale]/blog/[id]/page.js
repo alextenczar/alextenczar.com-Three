@@ -73,7 +73,7 @@ export default async function Post({ params }) {
         <div className="min-h-screen">
             <main className="max-w-7xl mx-auto relative">
                 <div className="flex items-center justify-center">
-                    <article className="!max-w-7xl  px-10 mx-auto ">
+                    <article className="!max-w-7xl w-full px-10 mx-auto ">
                         <h1 className="font-bold md:text-5xl text-4xl mb-4">{post.title}</h1>
                         <h3 className="lg:text-2xl md:text-xl text-md !mt-2 text-neutral-500 mb-4">{post.description}</h3>
                         {locale === 'ja' && <p className="my-4">❗️お知らせ：時間が足りないので全ポストが機械翻訳を使っています。すみません🙇</p>}

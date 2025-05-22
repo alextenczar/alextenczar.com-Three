@@ -21,35 +21,35 @@ const Footer = (props) => {
                 <div style={{ marginTop: '1rem' }} className='flex-col md:col-span-6 '>
                     <h3 className=' mb-4 text-lg'>Menu</h3>
                     <ul className='text-2xl'>
-                        <li><Link href="/">About</Link></li>
-                        <li><Link href="/works">Works</Link></li>
-                        <li><Link href="/blog">Blog</Link></li>
-                        <li><Link href="/photo">Photo</Link></li>
-                        <li><Link href="/contact">Contact</Link></li>
+                        <li><Link aria-label="About" href="/">About</Link></li>
+                        <li><Link aria-label="Works" href="/works">Works</Link></li>
+                        <li><Link aria-label="Blog" href="/blog">Blog</Link></li>
+                        <li><Link aria-label="Photo" href="/photo">Photo</Link></li>
+                        <li><Link aria-label="Contact" href="/contact">Contact</Link></li>
                     </ul>
                 </div>
 
                 <div style={{ marginTop: '1rem' }} className='flex-col md:col-span-4'>
                     <h3 className=' mb-4  text-lg'>{socialsTitle}</h3>
                     <ul className='text-2xl'>
-                        <li><Link href="https://github.com/alextenczar" target="_blank" rel="noopener noreferrer">GitHub</Link></li>
-                        <li><Link href="https://www.linkedin.com/in/alexander-tenczar/" target="_blank" rel="noopener noreferrer">LinkedIn</Link></li>
-                        <li><Link href="https://www.wantedly.com/id/alexander_tenczar" target="_blank" rel="noopener noreferrer">Wantedly</Link></li>
+                        <li><Link aria-label="Github" href="https://github.com/alextenczar" target="_blank" rel="noopener noreferrer">GitHub</Link></li>
+                        <li><Link aria-label="LinkedIn" href="https://www.linkedin.com/in/alexander-tenczar/" target="_blank" rel="noopener noreferrer">LinkedIn</Link></li>
+                        <li><Link aria-label="Wantedly" href="https://www.wantedly.com/id/alexander_tenczar" target="_blank" rel="noopener noreferrer">Wantedly</Link></li>
                     </ul>
                 </div>
                 <div style={{ marginTop: '1rem' }} className='flex-col md:col-span-2'>
                     <h3 className=' mb-4 text-lg'>Language</h3>
                     <ul className='text-2xl'>
-                        <li><button locale={'en'} className="font-semibold" onClick={() => {
+                        <li><button aria-label="English" locale={'en'} className="font-semibold" onClick={() => {
                             router.replace(pathname, { locale: 'en' });
                         }}>English</button></li>
-                        <li><button locale={'en'} className="font-semibold" onClick={() => {
+                        <li><button aria-label="日本語" locale={'en'} className="font-semibold" onClick={() => {
                             router.replace(pathname, { locale: 'ja' });
                         }}>日本語</button></li>
                     </ul>
                 </div>
             </nav>
-            <p className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl" style={styles.text}>© {new Date().getFullYear()} <Link href="/">Alex Tenczar</Link></p>
+            <p className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl" style={styles.text}>© {new Date().getFullYear()} <Link aria-label="Home" href="/">Alex Tenczar</Link></p>
         </footer >
     );
 };

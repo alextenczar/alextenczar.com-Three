@@ -23,7 +23,7 @@ const toBase64 = (str) =>
 const PostCard = ({ post, path }) => {
 
     return (
-        <Link href={`/${path}/${post.slug}`}>
+        <Link aria-label={post.title} href={`/${path}/${post.slug}`}>
             <div>
                 <div className="post-card observe-scroll flex flex-col rounded-[18px] shadow-lg overflow-hidden border border-neutral-200">
                     <div className="flex-shrink-0 relative">

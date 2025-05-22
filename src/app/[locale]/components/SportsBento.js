@@ -16,13 +16,13 @@ export default function SportsBento(props) {
             <h2 className='text-4xl font-bold'>{props.title}</h2>
             <h3 className='text-lg !text-neutral-100'>{props.subtitle}</h3>
             <div className='bento-button-container'>
-                <button
+                <button aria-label="Snowboarding"
                     className='bento-button material-symbols-outlined text-black bg-white p-1'
                     onClick={() => handleSportClick('snowboarding')}
                 >
                     snowboarding
                 </button>
-                <button
+                <button aria-label="Running"
                     className='bento-button material-symbols-outlined text-black bg-white p-1'
                     onClick={() => handleSportClick('running')}
                 >
