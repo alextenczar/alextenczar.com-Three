@@ -19,12 +19,27 @@ const Map = (props) => {
 
     let mapUrl = "https://api.maptiler.com/maps/jp-mierune-streets/256/{z}/{x}/{y}@2x.png?key=" + MAP_KEY
 
+    // Helper to detect mobile devices
+    const isMobile = typeof window !== 'undefined' && /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
     return (
-        <MapContainer preferCanvas={true} center={[props.lat, props.lon]} zoom={6} scrollWheelZoom={false} ref={mapRef} tapTolerance={100}>
-            <TileLayer
-                url={mapUrl}
+        <MapContainer
+            preferCanvas={true}
+            center={[props.lat, props.lon]}
+            zoom={6}
+            scrollWheelZoom={false}
+            ref={mapRef}
+            dragging={!isMobile}
+        >
+            <TileLayer url={mapUrl} />
+            <Marker
+                position={[props.lat, props.lon]}
+                icon={new Icon({
+                    iconUrl: "/marker-icon-2x.png",
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41]
+                })}
             />
-            <Marker position={[props.lat, props.lon]} icon={new Icon({ iconUrl: "/marker-icon-2x.png", iconSize: [25, 41], iconAnchor: [12, 41] })} />
         </MapContainer>
     );
 }
