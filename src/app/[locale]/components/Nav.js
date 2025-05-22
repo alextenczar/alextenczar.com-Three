@@ -50,7 +50,7 @@ const Nav = (props) => {
             <nav
                 className="mt-4 z-2 w-full px-10 py-5 max-w-[1280px] m-auto transition-all"
             >
-                <div className='mobile-menu list-none flex flex-col gap-4 m-0 p-5 fixed inset-0 bg-white justify-center items-end z-10'>
+                <div className='mobile-menu list-none flex flex-col gap-4 m-0 p-5 fixed inset-0 bg-white justify-center items-end z-10 invisible opacity-0'>
                     <p className='absolute top-4 left-[50%] transform-[translateX(-50%)] z-11 lg:text-5xl text-3xl w-full px-10 py-3 max-w-[1280px] m-auto font-extrabold'>
                         <Link href='/' >Alex Tenczar</Link>
                     </p>

@@ -2,7 +2,7 @@
 
 import 'leaflet/dist/leaflet.css'
 import { Icon } from 'leaflet'
-import React, { Suspense } from 'react'
+import React from 'react'
 import { useEffect, useRef } from 'react';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet'
 const MAP_KEY = process.env.NEXT_PUBLIC_MAP_KEY;
