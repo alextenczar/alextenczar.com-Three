@@ -62,8 +62,8 @@ body {
 }
 
 .menu-open .mobile-menu {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
   transition: opacity 500ms ease, visibility 0s ease 0s;
 
   &>* {
