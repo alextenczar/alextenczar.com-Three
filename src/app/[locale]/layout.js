@@ -5,10 +5,11 @@ import { ScrollTools } from './components/ScrollTools'
 import { IntersectionTools } from './components/IntersectionTools';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const notoSans = Noto_Sans({
   subsets: ['latin'],
@@ -64,7 +65,7 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <html lang={locale}>
-      <body className={`${notoSans.className}`}><NextIntlClientProvider><Nav locale={locale} settingsTitle={navT("settings")} socialsTitle={navT("socials")} languageLabel={navT("language")} tempLabel={navT("temperature")} timeLabel={navT("time")} />{children}<Analytics /><Footer locale={locale} /><ScrollTools /><Suspense><IntersectionTools /></Suspense></NextIntlClientProvider></body>
+      <body className={`${notoSans.className}`}><NextIntlClientProvider><Nav locale={locale} settingsTitle={navT("settings")} socialsTitle={navT("socials")} languageLabel={navT("language")} tempLabel={navT("temperature")} timeLabel={navT("time")} />{children}<Analytics /><Footer locale={locale} /><ScrollTools /><Suspense><IntersectionTools /></Suspense><SpeedInsights /></NextIntlClientProvider></body>
     </html >
   )
 }
