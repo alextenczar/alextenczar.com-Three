@@ -1,7 +1,11 @@
-
 "use client"
 
+import { useParams } from 'next/navigation';
+
+
 export default function Contact() {
+
+    const { locale } = useParams();
 
     async function handleSubmit(event) {
 
@@ -27,24 +31,38 @@ export default function Contact() {
     };
 
     return (
-        <main className="flex flex-col max-w-7xl mx-auto px-9" >
+        <main className="flex flex-col max-w-7xl w-full mx-auto px-9" >
             <h1 className="text-6xl font-bold mt-0">Contact</h1>
-            <form onSubmit={handleSubmit} className="mt-8 mb-2 w-full ">
-                <h2 className="text-2xl">Send a Message</h2>
-                <div className="mb-4 flex flex-col w-500">
+            <div className='max-w-xl sm:mt-auto mt-4 mb-2 sm:transform-[translateY(-50%)] w-full mx-auto'>
+                <form onSubmit={handleSubmit} className="">
+                    <h2 className="text-center text-3xl font-bold mb-8">{locale === 'ja' ? 'メッセージを送る' : 'Send a Message'}</h2>
+                    <div className="mb-4 flex flex-col w-full gap-4">
+                        <div className="w-full">
+                            <label htmlFor="form-name" className="sr-only">
+                                Name
+                            </label>
+                            <input id="form-name" autoComplete="name" maxLength={50} size="lg" name="name" className="border-b-2 border-solid w-full" placeholder={locale === 'ja' ? '名前' : 'Name'} />
+                        </div>
 
-                    <label htmlFor="form-name">Name </label>
-                    <input id="form-name" autoComplete="name" maxLength={50} size="lg" name="name" className="text-black" />
+                        <div className="w-full">
+                            <label htmlFor="form-email" className="sr-only">
+                                Email
+                            </label>
+                            <input id="form-email" placeholder={locale === 'ja' ? 'メールアドレス' : 'Email'} required autoComplete="email" maxLength={80} name="email" type="email" className="border-b-2 border-solid w-full" />
+                        </div>
 
-                    <label htmlFor="form-email"> Email:</label>
-                    <input id="form-email" required autoComplete="email" maxLength={80} name="email" type="email" className="text-black" />
+                        <label htmlFor="form-message" className="sr-only">
+                            Message
+                        </label>
+                        <textarea placeholder={locale === 'ja' ? 'お問い合わせ内容' : 'Your Message...'} id="form-message" required name="message" rows={5} className="border-b-2 border-solid" />
 
-                    <label htmlFor="form-message"> Message: </label>
-                    <textarea id="form-message" required name="message" rows={5} className="text-black w-full" />
 
-                </div>
-                <button aria-label="Submit" className="" type="submit">Send</button>
-            </form>
+                        <button aria-label="Submit" className="hover:scale-105 transition-all duration-300 text-center mx-auto mt-4 justify-self-center px-8 py-4 bg-black text-white rounded-4xl text-xl" type="submit">{locale === 'ja' ? '送信' : 'Send'}</button>
+                    </div>
+                </form>
+            </div>
+
+
         </main>
     )
 }
