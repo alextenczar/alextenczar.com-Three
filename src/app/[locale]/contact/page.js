@@ -35,7 +35,7 @@ export default function Contact() {
             <h1 className="text-6xl font-bold mt-0">Contact</h1>
             <div className='max-w-xl sm:mt-auto mt-4 mb-2 sm:transform-[translateY(-50%)] w-full mx-auto'>
                 <form onSubmit={handleSubmit} className="">
-                    <h2 className="text-center text-3xl font-bold mb-8">{locale === 'ja' ? 'メッセージを送る' : 'Send a Message'}</h2>
+                    <h2 className="sm:text-center text-3xl font-bold mb-8">{locale === 'ja' ? 'メッセージを送る' : 'Send a Message'}</h2>
                     <div className="mb-4 flex flex-col w-full gap-4">
                         <div className="w-full">
                             <label htmlFor="form-name" className="sr-only">
