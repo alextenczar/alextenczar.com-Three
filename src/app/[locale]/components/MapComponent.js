@@ -20,7 +20,7 @@ const Map = (props) => {
     let mapUrl = "https://api.maptiler.com/maps/jp-mierune-streets/256/{z}/{x}/{y}@2x.png?key=" + MAP_KEY
 
     return (
-        <MapContainer preferCanvas={true} center={[props.lat, props.lon]} zoom={6} scrollWheelZoom={false} ref={mapRef}>
+        <MapContainer preferCanvas={true} center={[props.lat, props.lon]} zoom={6} scrollWheelZoom={false} ref={mapRef} tapTolerance={100}>
             <TileLayer
                 url={mapUrl}
             />

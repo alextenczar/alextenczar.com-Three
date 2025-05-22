@@ -19,7 +19,7 @@ export default async function Works({ params }) {
 
     return (
         <div className="min-h-screen">
-            <main className="max-w-7xl mx-auto relative">
+            <main className="w-full max-w-7xl mx-auto relative">
                 <div className="h-full pb-16 px-a md:px-0 mx-auto">
                     <div className="flex items-start px-9 ">
                         <h1 className="font-bold text-6xl text-center text-neutral-800 uppercase">Works</h1>

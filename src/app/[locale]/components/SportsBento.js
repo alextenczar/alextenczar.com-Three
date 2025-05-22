@@ -32,13 +32,13 @@ export default function SportsBento(props) {
 
             <div className='video-mask'></div>
             {selectedSport === 'snowboarding' && (
-                <video autoPlay muted loop playsInline className="snowboard-video" poster='/snowboard-poster'>
+                <video autoPlay muted loop playsInline className="snowboard-video" poster='/snowboard-poster.webp'>
                     <source src="/snowboard.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             )}
             {selectedSport === 'running' && (
-                <video autoPlay muted loop playsInline className="running-video">
+                <video autoPlay muted loop playsInline className="running-video" poster='/running-poster.webp'>
                     <source src="/running.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>

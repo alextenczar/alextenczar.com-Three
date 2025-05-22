@@ -42,6 +42,7 @@ body {
   /* text-transform: uppercase; */
   line-height: 1.5;
   color: #1d1d1f;
+  touch-action: pan-y;
 }
 
 .menu-open {
@@ -160,7 +161,7 @@ body {
     display: flex;
     flex-direction: row;
     margin: auto;
-    height: 100%;
+    height: fit-content;
     justify-content: center;
     width: 100%;
     align-items: center;
@@ -171,7 +172,7 @@ body {
       transition: all 1s;
       width: 25%;
       max-width: 125px;
-      height: fit-content;
+      height: 100%;
       aspect-ratio: 1/1;
 
       svg {
@@ -196,7 +197,7 @@ body {
     .email-link {
       background-color: #f28b82; // Soft red color
       border-radius: 100%;
-      padding: 15px;
+      padding: 20px;
 
       svg {
         fill: white;
@@ -208,7 +209,7 @@ body {
     .linkedin-link {
       background-color: #0077b5; // LinkedIn blue color
       border-radius: 100%;
-      padding: 25px;
+      padding: 22px;
 
       svg {
         fill: white

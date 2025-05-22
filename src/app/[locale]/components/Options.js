@@ -11,13 +11,13 @@ const Options = (props) => {
             <div className='flex flex-row'>
                 <button className='!lg:text-4xl !text-2xl !font-extrabold' onClick={() => {
                     localStorage.setItem("tempUnit", "f")
-                    router.refresh()
+                    location.reload()
                     document.body.classList.remove('menu-open');
                     props.setMenuState(false)
                 }}><span>°F</span></button>
                 &nbsp;<button className='!lg:text-4xl !text-2xl !font-extrabold' onClick={() => {
                     localStorage.setItem("tempUnit", "c")
-                    router.refresh()
+                    location.reload()
                     document.body.classList.remove('menu-open');
                     props.setMenuState(false)
                 }}><span>°C</span></button>
@@ -28,12 +28,12 @@ const Options = (props) => {
 
                 <button className='!lg:text-4xl !text-2xl !font-extrabold' onClick={() => {
                     localStorage.setItem("timeFormat", '12hr')
-                    router.refresh()
+                    location.reload()
                     document.body.classList.remove('menu-open');
                     props.setMenuState(false)
                 }}><span>12hr</span></button>&nbsp;<button className='!lg:text-4xl !text-2xl !font-extrabold' onClick={() => {
                     localStorage.setItem("timeFormat", '24hr')
-                    router.refresh()
+                    location.reload()
                     document.body.classList.remove('menu-open');
                     props.setMenuState(false)
                 }}>
