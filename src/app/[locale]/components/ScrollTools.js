@@ -25,11 +25,11 @@ export const ScrollTools = () => {
 
         const scrollToTopButton = document.createElement('button');
         scrollToTopButton.setAttribute('aria-label', 'Top');
-        scrollToTopButton.className = 'scroll-to-top-button';
+        scrollToTopButton.className = 'go-up-button';
 
         document.body.appendChild(scrollToTopButton);
 
-        scrollToTopButton.innerHTML = '<span class="material-symbols-outlined scroll-to-top">arrow_upward</span>';
+        scrollToTopButton.innerHTML = '<span class="material-symbols-outlined go-up">arrow_upward</span>';
 
         scrollToTopButton.addEventListener('click', () => {
             lenis.scrollTo(0, { duration: 1.5 });
@@ -37,9 +37,9 @@ export const ScrollTools = () => {
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
-                scrollToTopButton.querySelector('.scroll-to-top').classList.add('visible');
+                scrollToTopButton.querySelector('.go-up').classList.add('visible');
             } else {
-                scrollToTopButton.querySelector('.scroll-to-top').classList.remove('visible')
+                scrollToTopButton.querySelector('.go-up').classList.remove('visible')
             }
         });
 
