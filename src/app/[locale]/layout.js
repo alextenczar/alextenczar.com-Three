@@ -3,17 +3,19 @@ import { Noto_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
 import { ScrollTools } from './components/ScrollTools'
 import { IntersectionTools } from './components/IntersectionTools';
-import Nav from './components/Nav';
 import Footer from './components/Footer';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 
 const notoSans = Noto_Sans({
   subsets: ['latin'],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 })
+
+const Nav = dynamic(() => import('./components/Nav'), {})
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
