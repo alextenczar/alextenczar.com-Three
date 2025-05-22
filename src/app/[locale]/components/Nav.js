@@ -87,7 +87,7 @@ const Nav = (props) => {
 
                     <div className=' mt-auto mb-4 flex flex-col sm:gap-6 gap-4'>
                         <div className='mb-4'>
-                            <p className='text-right lg:text-2xl text-xl mb-2'>
+                            <p className='text-right lg:text-2xl text-xl'>
                                 {props.settingsTitle}
                             </p>
                             <div className='text-right lg:text-2xl text-xl'>
@@ -96,7 +96,7 @@ const Nav = (props) => {
                                     <button aria-label="English" className='font-bold' onClick={() => {
                                         router.replace(pathname, { locale: 'en' });
                                     }}>English</button>&nbsp;
-                                    <button aria-label="日本語" className='font-bold mb-2' onClick={() => {
+                                    <button aria-label="日本語" className='font-bold' onClick={() => {
                                         router.replace(pathname, { locale: 'ja' });
                                     }}>日本語</button>
                                     <Suspense><Options setMenuState={menuStateHandler} languageLabel={props.languageLabel} tempLabel={props.tempLabel} timeLabel={props.timeLabel} /></Suspense>
@@ -105,7 +105,7 @@ const Nav = (props) => {
                         </div>
 
                         <div>
-                            <p className='text-right text-2xl mb-2'>
+                            <p className='text-right text-2xl'>
                                 {props.socialsTitle}
                             </p>
                             <ul className='lg:text-4xl text-2xl flex flex-row gap-4 !font-extrabold'>

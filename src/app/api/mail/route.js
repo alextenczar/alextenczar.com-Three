@@ -19,15 +19,15 @@ export async function POST(request) {
 
         auth: {
 
-            user: process.env.MAIL_USERNAME,
-            pass: process.env.MAIL_PASSWORD
+            user: process.env.SMTP_SERVER_USERNAME,
+            pass: process.env.SMTP_SERVER_PASSWORD
         }
     });
 
     try {
 
         const mail = await transporter.sendMail({
-            from: process.env.MAIL_USERNAME,
+            from: process.env.SMTP_SERVER_USERNAME,
             to: myEmail,
             replyTo: email,
             subject: `Website activity from ${email}`,
