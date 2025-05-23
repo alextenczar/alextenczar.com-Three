@@ -75,5 +75,11 @@
             "title": "お問い合わせ",
             "subtitle": "あなたからのメッセージを待っています"
         }
+    },
+        "Works": {
+        "role": "役割",
+        "responsibilities": "責任",
+        "technologies": "スタック",
+        "checkItOut": "サイトを見る"
     }
 }

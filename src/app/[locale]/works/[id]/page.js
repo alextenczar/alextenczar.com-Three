@@ -69,6 +69,7 @@ export async function generateMetadata({ params }) {
 export default async function Post({ params }) {
     const { markdown, post } = await fetchPostData(params.id);
     const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Works' });
 
     let siteLink = null
 
@@ -86,15 +87,15 @@ export default async function Post({ params }) {
                         {locale === 'ja' && <p className="my-4">❗️お知らせ：時間が足りないので全ポストが機械翻訳を使っています。すみません🙇</p>}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-10">
                             <div className="p-4 border border-neutral-200 rounded-lg">
-                                <h4 className="text-2xl">Role</h4>
+                                <h4 className="text-2xl">{t("role")}</h4>
                                 {post.properties.Role && <h3 className="lg:text-xl md:text-xl text-md lg:mt-2">{post.properties.Role.rich_text[0].plain_text}</h3>}
                             </div>
                             <div className="p-4 border border-neutral-200 rounded-lg">
-                                <h4 className="text-2xl">Responsibilites</h4>
+                                <h4 className="text-2xl">{t("responsibilities")}</h4>
                                 {post.properties.Responsibilities && <h3 className="lg:text-xl md:text-xl text-md lg:mt-2">{post.properties.Responsibilities.rich_text[0].plain_text}</h3>}
                             </div>
                             <div className="p-4 border border-neutral-200 rounded-lg">
-                                <h4 className="text-2xl">Technologies</h4>
+                                <h4 className="text-2xl">{t('technologies')}</h4>
                                 {post.properties.Technologies && <h3 className="lg:text-xl md:text-xl text-md lg:mt-2">{post.properties.Technologies.rich_text[0].plain_text}</h3>}
                             </div>
                         </div>
@@ -103,7 +104,7 @@ export default async function Post({ params }) {
                             <ReactMarkdown components={{ a: LinkRenderer }}>{markdown}</ReactMarkdown>
                             {siteLink && (
                                 <div className="flex flex-col mx-auto gap-2 align-middle justify-center text-center">
-                                    <h4 className="text-lg md:text-3xl sm:text-xl font-bold">Check It Out</h4>
+                                    <h4 className="text-lg md:text-3xl sm:text-xl font-bold">{t('checkItOut')}</h4>
                                     <Link aria-label="Site Link" href={siteLink} className="bg-neutral-800 !text-white rounded-4xl py-4 px-8 text-lg sm:text-xl font-bold inline-block mx-auto hover:scale-105" target="_blank">{siteLink}</Link>
                                 </div>
                             )}

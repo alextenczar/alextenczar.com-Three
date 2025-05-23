@@ -75,5 +75,11 @@
             "title": "Connect With Me",
             "subtitle": "Feel Free To Reach Out, I'd Love To Hear From You"
         }
+    },
+    "Works": {
+        "role": "Role",
+        "responsibilities": "Responsibilities",
+        "technologies": "Technologies",
+        "checkItOut": "Check It Out"
     }
 }
