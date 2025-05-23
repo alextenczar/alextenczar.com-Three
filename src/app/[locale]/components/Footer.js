@@ -41,10 +41,22 @@ const Footer = (props) => {
                     <h3 className=' mb-4 text-lg'>Language</h3>
                     <ul className='text-2xl'>
                         <li><button aria-label="English" locale={'en'} className="font-semibold" onClick={() => {
-                            router.replace(pathname, { locale: 'en' });
+                            if (pathname.startsWith('/blog/')) {
+                                router.replace('/blog', { locale: 'en' });
+                            } else if (pathname.startsWith('/works/')) {
+                                router.replace('/works', { locale: 'en' });
+                            } else {
+                                router.replace(pathname, { locale: 'en' });
+                            }
                         }}>English</button></li>
                         <li><button aria-label="日本語" locale={'en'} className="font-semibold" onClick={() => {
-                            router.replace(pathname, { locale: 'ja' });
+                            if (pathname.startsWith('/blog/')) {
+                                router.replace('/blog', { locale: 'ja' });
+                            } else if (pathname.startsWith('/works/')) {
+                                router.replace('/works', { locale: 'ja' });
+                            } else {
+                                router.replace(pathname, { locale: 'ja' });
+                            }
                         }}>日本語</button></li>
                     </ul>
                 </div>

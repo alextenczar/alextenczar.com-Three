@@ -94,10 +94,22 @@ const Nav = (props) => {
                                 <span className="text-base text-neutral-500">{props.languageLabel}</span>
                                 <div className='!lg:text-4xl !text-2xl'>
                                     <button aria-label="English" className='font-bold' onClick={() => {
-                                        router.replace(pathname, { locale: 'en' });
+                                        if (pathname.startsWith('/blog/')) {
+                                            router.replace('/blog', { locale: 'en' });
+                                        } else if (pathname.startsWith('/works/')) {
+                                            router.replace('/works', { locale: 'en' });
+                                        } else {
+                                            router.replace(pathname, { locale: 'en' });
+                                        }
                                     }}>English</button>&nbsp;
                                     <button aria-label="日本語" className='font-bold' onClick={() => {
-                                        router.replace(pathname, { locale: 'ja' });
+                                        if (pathname.startsWith('/blog/')) {
+                                            router.replace('/blog', { locale: 'ja' });
+                                        } else if (pathname.startsWith('/works/')) {
+                                            router.replace('/works', { locale: 'ja' });
+                                        } else {
+                                            router.replace(pathname, { locale: 'ja' });
+                                        }
                                     }}>日本語</button>
                                     <Suspense><Options setMenuState={menuStateHandler} languageLabel={props.languageLabel} tempLabel={props.tempLabel} timeLabel={props.timeLabel} /></Suspense>
                                 </div>
