@@ -15,12 +15,12 @@ export default class NotionService {
             database_id: database,
             filter: {
                 and: [
-                    // {
-                    //     property: 'Published',
-                    //     checkbox: {
-                    //         equals: true
-                    //     }
-                    // },
+                    {
+                        property: 'Published',
+                        checkbox: {
+                            equals: true
+                        }
+                    },
                     {
                         property: 'Lang',
                         rich_text: {
