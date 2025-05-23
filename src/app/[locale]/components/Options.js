@@ -1,9 +1,6 @@
 'use client'
 
-import { useRouter } from '@/i18n/navigation';
-
 const Options = (props) => {
-    const router = useRouter();
 
     return (
         <div className='options-container'>

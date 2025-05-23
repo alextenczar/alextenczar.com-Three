@@ -11,14 +11,14 @@ export default function BlogBento(props) {
         var circles = [];
 
         // Tighter horizontal and vertical ranges
-        const horizontalSpread = 80; // was 300/400/600, now 80
+        const horizontalSpread = 120; // was 300/400/600, now 80
 
         // Generate horizontalOffsets dynamically using horizontalSpread
         const horizontalOffsets = [];
         for (let i = -3; i <= 3; i++) {
             horizontalOffsets.push(i * horizontalSpread);
         }
-        const verticalSpread = 300; // was 300, now 120
+        const verticalSpread = 120; // was 300, now 120
 
         for (var i = 0; i < 2; i++) {
             horizontalOffsets.forEach(offset => {
@@ -60,7 +60,7 @@ export default function BlogBento(props) {
             container.appendChild(this.element);
 
             this.update = function () {
-                if (_this.y > 300) { // was 800, now 300 for tighter vertical bounds
+                if (_this.y > 500) { // was 800, now 300 for tighter vertical bounds
                     _this.y = 80 + Math.random() * 4;
                     _this.x = _this.range[0] + Math.random() * _this.range[1];
                 }
@@ -68,8 +68,6 @@ export default function BlogBento(props) {
                 _this.x += _this.v.x;
                 this.element.style.opacity = 1;
                 this.element.style.transform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
-                this.element.style.webkitTransform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
-                this.element.style.mozTransform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
             };
         }
 

@@ -10,10 +10,6 @@ import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { use } from 'react';
 
-
-
-
-
 export default function Home({ params }) {
   const { locale } = use(params);
 

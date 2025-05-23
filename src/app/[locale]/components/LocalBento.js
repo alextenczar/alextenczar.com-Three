@@ -10,9 +10,6 @@ import Weather from './Weather';
 import { useEffect, useState } from 'react';
 
 export default function LocalBento(props) {
-    // const router = useRouter();
-    // const pathname = usePathname();
-    // const searchParams = useSearchParams()
     const [location, setLoc] = useState('residing');
     const [tempUnit, setTempUnit] = useState('f')
     const [timeFormat, setTimeFormat] = useState('12hr')

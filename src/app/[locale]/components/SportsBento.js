@@ -2,8 +2,6 @@
 'use client';
 import { useState } from 'react';
 
-
-
 export default function SportsBento(props) {
     const [selectedSport, setSelectedSport] = useState('snowboarding');
 
