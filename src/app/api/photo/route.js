@@ -46,14 +46,11 @@ export async function GET(request) {
 
 
     let url = null
-    let originalUrl = null
 
     for (const size of sizesData.sizes.size) {
         if (size.label === 'Large 2048') {
             url = size.source
-        }
-        if (size.label === 'Original') {
-            originalUrl = size.source
+            break
         }
     }
 
@@ -70,10 +67,6 @@ export async function GET(request) {
 
     if (url === null) {
         url = sizesData.sizes.size[sizesData.sizes.size.length - 1].source
-    }
-
-    if (originalUrl === null) {
-        originalUrl = url
     }
 
     let width = sizesData.sizes.size[sizesData.sizes.size.length - 1].width;
@@ -105,5 +98,5 @@ export async function GET(request) {
         }
     }
 
-    return Response.json({ exifData, url, originalUrl: originalUrl, width: width, height: height, lat: lat, lon: lon, geoName: geoName, prev: prev, next: next });
+    return Response.json({ exifData, url, width: width, height: height, lat: lat, lon: lon, geoName: geoName, prev: prev, next: next });
 }

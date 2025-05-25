@@ -111,7 +111,7 @@ export default async function PhotoPage({ params }) {
                         {data.next && <Link aria-label="Next Photo" href={`/photo/${data.next}`}><span className="material-symbols-outlined text-neutral-500">
                             arrow_forward_ios
                         </span></Link>}
-                        <a href={data.originalUrl} target='_blank'>
+                        <a href={data.url} target='_blank'>
                             <Image
                                 width={data.width}
                                 height={data.height}
