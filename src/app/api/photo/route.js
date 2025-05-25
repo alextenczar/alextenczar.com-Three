@@ -51,11 +51,9 @@ export async function GET(request) {
     for (const size of sizesData.sizes.size) {
         if (size.label === 'Large 2048') {
             url = size.source
-            break
         }
         if (size.label === 'Original') {
             originalUrl = size.source
-            break
         }
     }
 
