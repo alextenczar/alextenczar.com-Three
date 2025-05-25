@@ -53,14 +53,10 @@ export async function GET(request) {
             url = size.source
             break
         }
-        if (size.label === 'original') {
+        if (size.label === 'Original') {
             originalUrl = size.source
             break
         }
-    }
-
-    if (originalUrl === null) {
-        originalUrl = url
     }
 
     let lat = null
@@ -76,6 +72,10 @@ export async function GET(request) {
 
     if (url === null) {
         url = sizesData.sizes.size[sizesData.sizes.size.length - 1].source
+    }
+
+    if (originalUrl === null) {
+        originalUrl = url
     }
 
     let width = sizesData.sizes.size[sizesData.sizes.size.length - 1].width;
