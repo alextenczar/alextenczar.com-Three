@@ -111,21 +111,23 @@ export default async function PhotoPage({ params }) {
                         {data.next && <Link aria-label="Next Photo" href={`/photo/${data.next}`}><span className="material-symbols-outlined text-neutral-500">
                             arrow_forward_ios
                         </span></Link>}
-                        <Image
-                            width={data.width}
-                            height={data.height}
-                            src={data.url}
-                            alt="Photo"
-                            draggable="false"
-                            placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(data.width, data.height))}`}
-                        />
+                        <a href={data.originalUrl} target='_blank'>
+                            <Image
+                                width={data.width}
+                                height={data.height}
+                                src={data.url}
+                                alt="Photo"
+                                draggable="false"
+                                placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(data.width, data.height))}`}
+                            />
+                        </a>
                     </div>
                     <p className='text-center text-neutral-500 text-sm mt-2'>
                         {camera && <span className='text-center'>{camera}&nbsp;</span>}{settings}
                     </p>
                     {map}
                 </div>
-            </div>
+            </div >
         );
     }
 

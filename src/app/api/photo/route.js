@@ -46,12 +46,21 @@ export async function GET(request) {
 
 
     let url = null
+    let originalUrl = null
 
     for (const size of sizesData.sizes.size) {
         if (size.label === 'Large 2048') {
             url = size.source
             break
         }
+        if (size.label === 'original') {
+            originalUrl = size.source
+            break
+        }
+    }
+
+    if (!originalUrl) {
+        originUrl = url
     }
 
     let lat = null
@@ -98,5 +107,5 @@ export async function GET(request) {
         }
     }
 
-    return Response.json({ exifData, url, width: width, height: height, lat: lat, lon: lon, geoName: geoName, prev: prev, next: next });
+    return Response.json({ exifData, url, originalUrl: originalUrl, width: width, height: height, lat: lat, lon: lon, geoName: geoName, prev: prev, next: next });
 }
