@@ -24,7 +24,7 @@ export const IntersectionTools = () => {
                     if (entry.isIntersecting) {
                         setTimeout(() => {
                             entry.target.classList.add('in-view');
-                        }, index * 64); // 150ms delay per entry
+                        }, index * 96); // 150ms delay per entry
                     }
                 });
             }

@@ -59,8 +59,8 @@ export async function GET(request) {
         }
     }
 
-    if (!originalUrl) {
-        originUrl = url
+    if (originalUrl === null) {
+        originalUrl = url
     }
 
     let lat = null
