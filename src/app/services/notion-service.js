@@ -31,8 +31,8 @@ export default class NotionService {
             },
             sorts: [
                 {
-                    property: 'Updated',
-                    direction: 'descending'
+                    property: 'Order',
+                    direction: 'ascending'
                 }
             ]
         });
