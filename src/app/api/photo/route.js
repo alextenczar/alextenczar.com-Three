@@ -61,7 +61,17 @@ export async function GET(request) {
     if (geoData.photo) {
         lat = geoData.photo.location.latitude;
         lon = geoData.photo.location.longitude;
-        geoName = geoData.photo.location.county._content + ', ' + geoData.photo.location.country._content;
+        if (geoData?.photo?.location?.county?._content && geoData?.photo?.location?.region?._content) {
+            geoName = `${geoData.photo.location.locality?._content ? geoData.photo.location.locality._content + ', ' : ''}${geoData.photo.location.county._content}, ${geoData.photo.location.region._content}, ${geoData.photo.location.country._content}`;
+        } else if (geoData?.photo?.location?.county?._content) {
+            geoName = `${geoData.photo.location.county._content}, ${geoData.photo.location.country._content}`;
+        } else if (geoData?.photo?.location?.region?._content) {
+            geoName = `${geoData.photo.location.region._content}, ${geoData.photo.location.country._content}`;
+        } else if (geoData?.photo?.location?.country?._content) {
+            geoName = geoData.photo.location.country._content;
+        } else {
+            geoName = null;
+        }
     }
 
 
