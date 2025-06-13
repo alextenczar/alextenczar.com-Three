@@ -7,3 +7,6 @@ Host: https://alextenczar.com
 
 # Sitemaps
 Sitemap: https://alextenczar.com/sitemap.xml
+
+# Disallow
+Disallow: /sad_mac.png

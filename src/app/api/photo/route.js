@@ -61,7 +61,7 @@ export async function GET(request) {
     if (geoData.photo) {
         lat = geoData.photo.location.latitude;
         lon = geoData.photo.location.longitude;
-        geoName = geoData.photo.location.locality._content + ', ' + geoData.photo.location.country._content;
+        geoName = geoData.photo.location.county._content + ', ' + geoData.photo.location.country._content;
     }
 
 
