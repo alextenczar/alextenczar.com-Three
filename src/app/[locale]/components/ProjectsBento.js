@@ -42,7 +42,7 @@ export default function ProjectsBento(props) {
             <h3 className='text-lg text-neutral-500'>{props.subtitle}</h3>
 
             <video autoPlay muted loop playsInline className="projects-video" poster='/project-poster.webp'>
-                <source src="/nutrition-tufts-edu.mp4" type="video/mp4" />
+                <source src="/bandviz-web.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
         </div>

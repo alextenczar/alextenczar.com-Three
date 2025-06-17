@@ -1,6 +1,9 @@
 import GetPosts from "../../lib/GetPosts.js";
 import PostCard from "../components/PostCard.js";
 import { getTranslations } from "next-intl/server";
+import { authOptions } from '@/auth';
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 
 export async function generateMetadata({ params }) {
     const { locale } = await params;
@@ -14,6 +17,13 @@ export async function generateMetadata({ params }) {
 
 
 export default async function Works({ params }) {
+    const session = await getServerSession(authOptions);
+
+    if (!session) {
+        redirect('/api/auth/signin?callbackUrl=/works');
+    }
+
+
     const { locale } = await params;
     let postsRes = await GetPosts('projects', locale);
 

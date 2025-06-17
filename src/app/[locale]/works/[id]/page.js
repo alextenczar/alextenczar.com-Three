@@ -5,6 +5,9 @@ import Image from "next/image";
 import '../../../styles/post-styling.scss'
 import { Link } from '@/i18n/navigation';
 import { getTranslations } from "next-intl/server";
+import { authOptions } from '@/auth';
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 
 const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -56,6 +59,14 @@ function LinkRenderer(props) {
 }
 
 export async function generateMetadata({ params }) {
+
+    const session = await getServerSession(authOptions);
+
+    if (!session) {
+        redirect('/api/auth/signin?callbackUrl=/works');
+    }
+
+
     const { post } = await fetchPostData(params.id);
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'Metadata' });
