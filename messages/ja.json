@@ -76,6 +76,14 @@
             "subtitle": "あなたからのメッセージを待っています"
         }
     },
+    "SignIn": {
+        "title": "こちらは非公開ページとなっております。",
+        "subtitleBeginning": "ご希望の方には個別にご案内いたしますので、",
+        "subtitleLink": "ご連絡のほどお願いします。",
+        "subtitleEnd": "",
+        "password": "パスワードを入力してください",
+        "signIn": "サインイン"
+    },
         "Works": {
         "role": "役割",
         "responsibilities": "責任",
