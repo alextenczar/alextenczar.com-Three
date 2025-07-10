@@ -1,7 +1,7 @@
 "use client"
 
 import { useParams } from 'next/navigation';
-
+import { Link } from '@/i18n/navigation';
 
 export default function Contact() {
 
@@ -32,7 +32,7 @@ export default function Contact() {
 
     return (
         <main className="flex flex-col max-w-7xl w-full mx-auto px-9" >
-            <h1 className="text-6xl font-bold mt-0">Contact</h1>
+            <Link href="/contact"><h1 className="text-6xl font-bold mt-0">Contact</h1></Link>
             <div className='max-w-xl sm:mt-48 mt-8 mb-2 w-full mx-auto'>
                 <form onSubmit={handleSubmit} className="">
                     <h2 className="sm:text-center text-3xl font-bold mb-8 mt-8">{locale === 'ja' ? 'メッセージを送る' : 'Send a Message'}</h2>

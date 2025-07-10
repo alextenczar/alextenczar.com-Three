@@ -4,6 +4,7 @@ import GetSinglePost from "../../../lib/GetSinglePost.js";
 import Image from "next/image";
 import '../../../styles/post-styling.scss'
 import { getTranslations } from "next-intl/server";
+import { Link } from '@/i18n/navigation';
 
 const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -74,7 +75,8 @@ export default async function Post({ params }) {
             <main className="max-w-7xl mx-auto relative">
                 <div className="flex items-center justify-center">
                     <article className="!max-w-7xl w-full px-10 mx-auto ">
-                        <h1 className="font-bold md:text-5xl text-4xl mb-4">{post.title}</h1>
+                        <Link className="!font-bold text-6xl text-center text-neutral-800 uppercase" href="/blog">Blog</Link>
+                        <h1 className="font-bold md:text-5xl text-4xl mt-8 mb-4">{post.title}</h1>
                         <h3 className="lg:text-2xl md:text-xl text-md !mt-2 text-neutral-500 mb-4">{post.description}</h3>
                         {locale === 'ja' && <p className="my-4">❗️お知らせ：時間が足りないので全ポストが機械翻訳を使っています。すみません🙇</p>}
                         <Image className="w-full object-fill rounded-xl shadow-lg overflow-hidden border border-neutral-200" src={post.cover.url} alt="" width={1920} height={1080} placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(1920, 1080))}`} />

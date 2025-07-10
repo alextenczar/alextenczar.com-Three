@@ -132,9 +132,10 @@ export default async function PhotoPage({ params }) {
     }
 
     return (
-        <>
+        <main>
+            <Link href="/photo"><h1 className="text-6xl font-bold mx-auto mt-0 z-2 w-full px-10 max-w-[1280px]">Photo</h1></Link>
             {photoComponent}
-        </>
+        </main>
     )
 }
 

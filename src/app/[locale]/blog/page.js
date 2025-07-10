@@ -1,6 +1,7 @@
 import GetPosts from "../../lib/GetPosts.js";
 import PostCard from "../components/PostCard.js";
 import { getTranslations } from "next-intl/server";
+import { Link } from '@/i18n/navigation';
 
 export async function generateMetadata({ params }) {
     const { locale } = await params;
@@ -22,7 +23,7 @@ export default async function Works({ params }) {
             <main className="max-w-7xl mx-auto relative">
                 <div className="h-full pb-16 px-a md:px-0 mx-auto">
                     <div className="flex items-start px-9 ">
-                        <h1 className="font-bold text-6xl text-center text-neutral-800 uppercase">Blog</h1>
+                        <Link href="/blog"><h1 className="font-bold text-6xl text-center text-neutral-800 uppercase">Blog</h1></Link>
                     </div>
                     <div className="mt-6 px-9 mx-auto flex flex-col gap-5">
                         {locale === 'ja' && <p>❗️お知らせ：時間が足りないので全ポストが機械翻訳を使っています。すみません🙇</p>}

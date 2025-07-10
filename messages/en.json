@@ -79,7 +79,7 @@
     "SignIn": {
         "title": "My Portfolio Is Private",
         "subtitleBeginning": "Access is available upon request. Please ",
-        "subtitleLink": "get in touch",
+        "subtitleLink": "get in touch ",
         "subtitleEnd": "for credentials.",
         "password": "Enter Password",
         "signIn": "Sign In"

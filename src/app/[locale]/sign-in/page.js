@@ -2,9 +2,9 @@ import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/auth';
-import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { use } from 'react';
+import { Link } from '@/i18n/navigation';
 
 export default async function SignIn({ params }) {
     await params
@@ -25,7 +25,7 @@ export default async function SignIn({ params }) {
 
     return (
         <main className="flex flex-col max-w-7xl w-full mx-auto px-9 " >
-            <h1 className="text-6xl font-bold mt-0">Works</h1>
+            <Link href="/works"><h1 className="text-6xl font-bold mt-0">Works</h1></Link>
 
             <div className="flex items-center justify-center sm:mt-48 mt-16">
                 <div className="!max-w-7xl w-full px-10 mx-auto ">

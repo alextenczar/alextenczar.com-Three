@@ -48,7 +48,7 @@ const Nav = (props) => {
     return (
         <>
             <nav
-                className="mt-4 z-2 w-full px-10 py-5 max-w-[1280px] m-auto transition-all"
+                className="mt-4 z-2 w-full px-10 py-5 max-w-[1280px] m-auto mb-0 transition-all"
             >
                 <div
                     className='mobile-menu list-none flex flex-col gap-4 m-0 p-5 fixed inset-0 bg-white justify-center items-end z-10 invisible opacity-0'

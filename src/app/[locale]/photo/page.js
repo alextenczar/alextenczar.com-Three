@@ -1,5 +1,6 @@
 import ImageGrid from '../components/ImageGrid';
 import { getTranslations } from "next-intl/server";
+import { Link } from '@/i18n/navigation';
 
 export const dynamic = 'force-dynamic';
 
@@ -35,6 +36,7 @@ export default async function Photo() {
 
   return (
     <main>
+      <Link href="/photo"><h1 className="text-6xl font-bold mx-auto mt-0 z-2 w-full px-10 max-w-[1280px]">Photo</h1></Link>
       <ImageGrid images={images} />
     </main>
   );
