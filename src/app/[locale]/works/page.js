@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { authOptions } from '@/auth';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
+import { headers } from 'next/headers'
 
 export async function generateMetadata({ params }) {
     const { locale } = await params;
@@ -17,9 +18,10 @@ export async function generateMetadata({ params }) {
 
 
 export default async function Works({ params }) {
+    const countryCode = headers().get('x-vercel-ip-country') || 'US'
     const session = await getServerSession(authOptions);
 
-    if (!session) {
+    if (!session && countryCode === 'US') {
         redirect('/api/auth/signin?callbackUrl=/works');
     }
 

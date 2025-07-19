@@ -8,6 +8,7 @@ import { getTranslations } from "next-intl/server";
 import { authOptions } from '@/auth';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
+import { headers } from 'next/headers'
 
 const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -59,10 +60,10 @@ function LinkRenderer(props) {
 }
 
 export async function generateMetadata({ params }) {
-
+    const countryCode = headers().get('x-vercel-ip-country') || 'US'
     const session = await getServerSession(authOptions);
 
-    if (!session) {
+    if (!session && countryCode === 'US') {
         redirect('/api/auth/signin?callbackUrl=/works');
     }
 
