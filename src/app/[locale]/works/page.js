@@ -18,7 +18,8 @@ export async function generateMetadata({ params }) {
 
 
 export default async function Works({ params }) {
-    const countryCode = headers().get('x-vercel-ip-country') || 'US'
+    const countryHeaders = await headers();
+    const countryCode = countryHeaders.get('x-vercel-ip-country') || 'US'
     const session = await getServerSession(authOptions);
 
     if (!session && countryCode === 'US') {
