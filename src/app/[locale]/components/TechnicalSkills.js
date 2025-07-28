@@ -41,8 +41,7 @@ const TechnicalSkills = ({ text }) => {
     ];
 
     const skillLinks = skills.map(skill => (
-        <span><a
-            key={skill.name}
+        <span key={skill.name}><a
             href={skill.url}
             target="_blank"
             rel="noopener noreferrer"
