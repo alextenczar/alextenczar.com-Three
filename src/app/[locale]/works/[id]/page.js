@@ -53,7 +53,7 @@ async function fetchPostData(id) {
 
 function LinkRenderer(props) {
     return (
-        <a href={props.href} target="_blank" rel="noreferrer">
+        <a href={props.href} target="_blank" rel="noreferrer nofollow">
             {props.children}
         </a>
     );
@@ -75,7 +75,15 @@ export async function generateMetadata({ params }) {
 
     return {
         title: post.title + " | " + t("title"),
-        description: post.description
+        description: post.description,
+        robots: {
+            index: false,
+            follow: false,
+            googleBot: {
+                index: false,
+                follow: false,
+            }
+        },
     }
 }
 
@@ -119,7 +127,7 @@ export default async function Post({ params }) {
                             {siteLink && (
                                 <div className="flex flex-col mx-auto gap-2 align-middle justify-center text-center">
                                     <h4 className="text-lg md:text-3xl sm:text-xl font-bold">{t('checkItOut')}</h4>
-                                    <Link aria-label="Site Link" href={siteLink} className="bg-neutral-800 !text-white rounded-4xl py-4 px-8 text-lg sm:text-xl font-bold inline-block mx-auto hover:scale-105" target="_blank">{siteLink}</Link>
+                                    <Link rel="noreferrer nofollow" aria-label="Site Link" href={siteLink} className="bg-neutral-800 !text-white rounded-4xl py-4 px-8 text-lg sm:text-xl font-bold inline-block mx-auto hover:scale-105" target="_blank">{siteLink}</Link>
                                 </div>
                             )}
                         </div>

@@ -543,12 +543,25 @@ a {
 
 .outer-scroll-container {
   transform: rotate(-5deg);
-  opacity: 0.65;
+
+  a {
+    opacity: 0.65;
+    font-weight: 800;
+  }
+
   transition: all 1s;
 
   &:hover {
     transform: rotate(0deg);
-    opacity: .85;
+
+    a:hover {
+      opacity: .85;
+      animation-direction: reverse;
+      -webkit-text-stroke: 2px black;
+      color: white;
+      animation-duration: 720s;
+      animation-delay: -720s;
+    }
   }
 }
 
@@ -570,6 +583,10 @@ a {
   color: white;
   animation-duration: 720s;
   animation-delay: -720s;
+
+  a:hover {
+    color: #000;
+  }
 }
 
 .scroll div:nth-child(2) {
