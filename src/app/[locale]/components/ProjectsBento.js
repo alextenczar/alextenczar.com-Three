@@ -39,7 +39,7 @@ export default function ProjectsBento(props) {
     return (
         <div className='bento observe-scroll bento-projects row-span-1 max-md:min-h-64'>
             <h2 className='text-4xl font-bold'>{props.title}</h2>
-            <h3 className='text-lg text-neutral-500'>{props.subtitle}</h3>
+            <h3 className='text-lg text-neutral-500 font-normal'>{props.subtitle}</h3>
 
             <video autoPlay muted loop playsInline className="projects-video" poster='/project-poster.webp'>
                 <source src="/bandviz-web.mp4" type="video/mp4" />

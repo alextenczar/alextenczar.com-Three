@@ -87,7 +87,7 @@ export default function BlogBento(props) {
 
         <div className='bento observe-scroll blog-bento row-span-1 max-md:min-h-64 flex flex-col'>
             <h2 className='text-4xl font-bold'>{props.title}</h2>
-            <h3 className='text-lg text-neutral-500'>{props.subtitle}</h3>
+            <h3 className='text-lg text-neutral-500 font-normal'>{props.subtitle}</h3>
             <div id="container">
                 <span className='thought-cloud'>💭</span>
                 <div id="animate"></div>

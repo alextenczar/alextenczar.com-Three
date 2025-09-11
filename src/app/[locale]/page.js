@@ -41,7 +41,7 @@ export default function Home({ params }) {
         <Link aria-label={t('works.title')} href="/works"><ProjectsBento title={t('works.title')} subtitle={t('works.subtitle')} /></Link>
         <div className='bento observe-scroll md:col-span-2'>
           <h2 className='text-4xl font-bold'>{t('education.title')}</h2>
-          <h3 className='text-lg text-neutral-500'>{t('education.subtitle')}</h3>
+          <h3 className='text-lg text-neutral-500 font-normal'>{t('education.subtitle')}</h3>
           <div className="grid grid-cols-20 md:grid-rows-5 grid-rows-[auto] text-xs mt-6 education-timeline max-md:min-h-80">
             <div className="py-2 col-span-20 grid grid-cols-subgrid items-center"><div className="timeline-label px-2 col-start-11 col-span-9 rounded-full font-bold self-end">{t('education.launchtheory')}</div><Link aria-label="Launch Theory" href="https://launchtheory.com" target="_blank" className="timeline-item h-3 col-start-11 col-span-9 bg-purple-500 rounded-full">&nbsp;</Link></div>
             <div className="col-span-20 grid grid-cols-subgrid grid-rows-2 items-center"><div className="timeline-label px-2 col-start-9 col-span-11 rounded-full font-bold self-end">{t('education.internship')}</div><Link aria-label="CommonPlaces" href="https://commonplaces.com" target="_blank" className="timeline-item h-3 col-start-9 col-span-2 bg-green-500 rounded-full">&nbsp;</Link></div>
@@ -54,7 +54,7 @@ export default function Home({ params }) {
 
         <div className='bento observe-scroll flex flex-col max-md:min-h-80'>
           <h2 className='text-4xl font-bold'>{t('skills.title')}</h2>
-          <h3 className='text-lg text-neutral-500'>{t('skills.subtitle')}</h3>
+          <h3 className='text-lg text-neutral-500 font-normal'>{t('skills.subtitle')}</h3>
           <TechnicalSkills></TechnicalSkills>
         </div>
 
@@ -65,7 +65,7 @@ export default function Home({ params }) {
         <Link aria-label={t('photography.title')} href="/photo">
           <div className='bento-photo bento observe-scroll row-span-1 max-md:min-h-64'>
             <h2 className='text-4xl font-bold'>{t('photography.title')}</h2>
-            <h3 className='text-lg text-neutral-500'>{t('photography.subtitle')}</h3>
+            <h3 className='text-lg text-neutral-500 font-normal'>{t('photography.subtitle')}</h3>
             <ImageTeaser />
           </div>
         </Link>
