@@ -24,17 +24,15 @@ const toBase64 = (str) =>
         ? Buffer.from(str).toString('base64')
         : window.btoa(str)
 
+const images = [
+    '/cat.jpg',
+    '/coast.jpg',
+    '/checker.jpg',
+    '/night.jpg'
+]
 
 
 export default function ImageTeaser() {
-
-    let images = [
-        '/cat.jpg',
-        '/coast.jpg',
-        '/checker.jpg',
-        '/night.jpg'
-    ]
-
     const [imageComponent, setImageComponent] = useState([])
 
     useEffect(() => {
