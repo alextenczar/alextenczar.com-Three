@@ -1,7 +1,7 @@
 import CredentialsProvider from 'next-auth/providers/credentials';
 
-let password = process.env.AUTH_PASS
-let secret = process.env.AUTH_SECRET
+let password = process.env.SITE_LOCK_AUTH_PASS
+let secret = process.env.SITE_LOCK_AUTH_SECRET
 
 export const authOptions = {
     providers: [
