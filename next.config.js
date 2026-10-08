@@ -1,4 +1,5 @@
 const createNextIntlPlugin = require('next-intl/plugin');
+const { withBotId } = require('botid/next/config');
 
 const withNextIntl = createNextIntlPlugin();
 
@@ -42,5 +43,5 @@ const nextConfig = {
     },
 }
 
-module.exports = withNextIntl(nextConfig)
+module.exports = withBotId(withNextIntl(nextConfig))
 

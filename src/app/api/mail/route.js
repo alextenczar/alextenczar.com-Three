@@ -1,7 +1,14 @@
 import { NextResponse } from 'next/server'
+import { checkBotId } from 'botid/server'
 const nodemailer = require('nodemailer');
 
 export async function POST(request) {
+    const verification = await checkBotId();
+
+    if (verification.isBot) {
+        return NextResponse.json({ error: 'Access denied' }, { status: 403 });
+    }
+
     const myEmail = process.env.MAIL_PERSONAL_EMAIL;
 
     const formData = await request.formData()
