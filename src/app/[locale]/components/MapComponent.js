@@ -31,7 +31,11 @@ const Map = (props) => {
             ref={mapRef}
             dragging={!isMobile}
         >
-            <TileLayer url={mapUrl} />
+            <TileLayer
+                url={mapUrl}
+                crossOrigin="anonymous"
+                referrerPolicy="origin"
+            />
             <Marker
                 position={[props.lat, props.lon]}
                 icon={new Icon({
